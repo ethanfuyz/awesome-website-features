@@ -15,7 +15,6 @@ body {
     max-height: 85vh;
 }
 
-/* 自定义滚动条样式 */
 .feature::-webkit-scrollbar {
     width: 8px;
 }
