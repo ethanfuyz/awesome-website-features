@@ -1,0 +1,150 @@
+body {
+    /* https://www.w3schools.com/css/css3_gradients.asp */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.feature {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    overflow-y: auto;
+    margin-bottom: 2rem;
+    max-height: 85vh;
+}
+
+/* 自定义滚动条样式 */
+.feature::-webkit-scrollbar {
+    width: 8px;
+}
+
+.feature::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.feature::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.feature::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* https://www.w3schools.com/cssref/css3_pr_backdrop-filter.php */
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.card-header {
+    background: transparent;
+    border-bottom: none;
+}
+
+.card-header h3 {
+    color: #764ba2;
+    font-weight: 600;
+}
+
+.card-header h5 {
+    color: #764ba2;
+    font-weight: 600;
+}
+
+/* https://getbootstrap.com/docs/5.0/forms/form-control/ */
+.form-control:focus {
+    border-color: #764ba2;
+    box-shadow: 0 0 0 0.2rem rgba(118, 75, 162, 0.25);
+}
+
+.form-text {
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem;
+    font-weight: 600;
+    /* The animation lasts 0.3 seconds */
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    /* https://www.w3schools.com/cssref/css3_pr_transform.php */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.is-invalid {
+    border-color: #dc3545 !important;
+}
+
+.password-requirements {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.requirement {
+    margin-bottom: 0.25rem;
+}
+
+.requirement.valid {
+    color: #198754;
+}
+
+.requirement.invalid {
+    color: #6c757d;
+}
+
+/* Code block styles */
+pre {
+    background-color: #373737;
+    color: #d4d4d4;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.toggle-arrow {
+    transition: transform 0.3s ease;
+}
+
+.feature-header.collapsed .toggle-arrow {
+    transform: rotate(-90deg);
+}
+
+.feature-content {
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+}
+
+.feature-content.collapsed {
+    max-height: 0;
+}
+
+.feature-content a {
+    color: #6f42c1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.feature-content a:hover {
+    color: #563d7c;
+    text-decoration: underline;
+}

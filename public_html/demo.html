@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Left side explanation -->
+            <div class="col-lg-6">
+                <div class="p-3">
+                    <h2 class="mb-4">Feature Overview</h2>
+                    <div class="feature p-3">
+                        <div class="mb-3">
+                            <div class="feature-header d-flex justify-content-between align-items-center collapsed"
+                                style="cursor: pointer;" onclick="toggleFeature(this)">
+                                <h4 class="mb-0">Feature: Validation</h4>
+                                <span class="toggle-arrow">▼</span>
+                            </div>
+                            <div class="feature-content collapsed">
+                                <p class="text-muted">This feature shows how to validate a username and password in real
+                                    time.</p>
+                                <div>
+                                    <h5>
+                                        Here is how password validation is implemented:
+                                    </h5>
+                                    <pre><code>const password = document.getElementById('password');
+const lengthReq = document.getElementById('length');
+const hasLength = password.value.length >= 8;
+
+lengthReq.className = `requirement ${hasLength ? 'valid' : 'invalid'}`;
+lengthReq.textContent = hasLength ? '✓ At least 8 characters' : 'At least 8 characters';</code></pre>
+                                    <ul>
+                                        <li>Gets the password input element</li>
+                                        <li>Gets the element that displays the length requirement</li>
+                                        <li>Checks if the password length is at least 8 characters</li>
+                                        <li>Sets the style class (valid/invalid) based on password length</li>
+                                        <li>Updates the display text, adds a ✓ mark if validation passes</li>
+                                    </ul>
+                                    <p>
+                                        Please try entering something in the <strong>Password</strong> input box on the
+                                        right
+                                        and see what happens!
+                                    </p>
+                                    <pre><code>const isValid = hasLength && hasUppercase && hasLowercase && hasNumber && hasSpecial;</code></pre>
+                                    <p>When all the above conditions are met, the function
+                                        <strong><em>validatePassword()</em></strong> will return <em>true</em>.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h5>
+                                        Here is how password confirmation is implemented:
+                                    </h5>
+                                    <pre><code>if (password.value !== confirmPassword.value) {
+    confirmPassword.classList.add('is-invalid');
+    confirmPasswordError.style.display = 'block';
+    confirmPasswordError.textContent = 'Passwords do not match!';
+    return false;
+} else {
+    confirmPassword.classList.remove('is-invalid');
+    confirmPasswordError.style.display = 'none';
+    return true;
+}</code></pre>
+                                    <ul>
+                                        <li>Checks if the two passwords are different</li>
+                                        <li>Adds red border to the confirm password input</li>
+                                        <li>Shows the error message</li>
+                                        <li>Sets the error message text</li>
+                                        <li>Indicates validation failed</li>
+                                        <li>Removes red border when passwords match</li>
+                                        <li>Hides the error message</li>
+                                        <li>Indicates validation passed</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h5>
+                                        Validate whether the username meets the required format in a similar way.
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr style="border: 1px solid #6f42c1; margin: 20px 0;">
+
+                        <div>
+                            <div class="feature-header d-flex justify-content-between align-items-center collapsed"
+                                style="cursor: pointer;" onclick="toggleFeature(this)">
+                                <h4 class="mb-0">
+                                    Feature: Password Encryption
+                                </h4>
+                                <span class="toggle-arrow">▼</span>
+                            </div>
+                            <div class="feature-content collapsed">
+                                <p class="text-muted">
+                                    This feature shows how to encrypt a password using bcrypt.
+                                </p>
+                                <div>
+                                    <h5>
+                                        Concept: What is a <a href="https://en.wikipedia.org/wiki/Hash_function"
+                                            target="_blank">hash</a>?
+                                    </h5>
+                                    <p>
+                                        A hash is a one-way function that takes an input and returns a fixed-length
+                                        string of
+                                        characters.
+                                    </p>
+                                    <h5>
+                                        Concept: What is a <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)"
+                                            target="_blank">salt</a>?
+                                    </h5>
+                                    <p>
+                                        A salt is a random string of characters that is used to make the hash unique.
+                                    </p>
+                                    <h5>
+                                        How to use <a href="https://en.wikipedia.org/wiki/Bcrypt"
+                                            target="_blank">bcrypt</a>?
+                                    </h5>
+                                    <p>
+                                        bcrypt is a popular library used in Node.js for hashing passwords securely. It
+                                        helps you encrypt passwords so that they are not stored as plain text in your
+                                        database. It also allows you to verify passwords during login by comparing the
+                                        plain password to the hashed version.
+                                    </p>
+                                    <p>
+                                        Install bcrypt using npm:
+                                    </p>
+                                    <pre><code>npm install bcrypt</code></pre>
+
+                                    <p>
+                                        Please try entering something and select a salt value to see how the output
+                                        changes:
+                                    </p>
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3">
+                                                    <input type="password" class="form-control" id="bcryptTest"
+                                                        name="bcryptTest" placeholder="Please type something">
+                                                    <label for="bcryptTest">Please type something</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <div class="form-floating mb-3">
+                                                    <select class="form-select" id="costFactor" name="costFactor">
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10" selected>10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                    </select>
+                                                    <label for="costFactor">Cost Factor</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <div class="d-grid">
+                                                    <button type="button" class="btn btn-primary btn-lg"
+                                                        onclick="encryptDemo()">
+                                                        Encrypt
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="bcryptResult" readonly>
+                                                    <label for="bcryptResult">Encrypted Result</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <pre><code>app.post('/encrypt', async (req, res) => {
+    const { password, costFactor } = req.body;
+    
+    try {
+        const hashedResult = await bcrypt.hash(password, parseInt(costFactor));
+        res.json({ result: hashedResult });
+    } catch (error) {
+        res.status(500).json({ error: 'Encryption failed' });
+    }
+});</code></pre>
+                                    <p>
+                                        Examples of when an <em>error</em> might occur:
+                                    </p>
+                                    <pre><code>await bcrypt.hash(undefined, 10);
+await bcrypt.hash("123456", NaN);
+await bcrypt.hash("123456", 9999);</code></pre>
+                                    <p>
+                                        What are <em>async</em> and <em>await</em>?
+                                    </p>
+                                    <p>
+                                        Async and await are used to handle promises in a more readable way.
+                                    </p>
+                                    <p>
+                                        <em>await</em> will pause execution until the server returns a result for the
+                                        following front-end code.
+                                    </p>
+                                    <pre><code>fetch('/encrypt', {
+    method: 'POST',
+    headers: {
+        // Specify that the request body is in JSON format
+        'Content-Type': 'application/json',
+    },
+
+    // The body of the request is converted from a JavaScript object to JSON
+    body: JSON.stringify({
+        password: bcryptTest,
+        costFactor: costFactor
+    })
+})</code></pre>
+                                    <p>
+                                        Next, the backend returns the result to the frontend using
+                                        <br><em>res.json({ result: hashedResult });</em>
+                                    </p>
+                                    <pre><code>.then(response => response.json())</code></pre>
+                                    <h5>
+                                        Store registration data into the database using <a
+                                            href="https://en.wikipedia.org/wiki/SQLite" target="_blank">SQLite</a>
+                                    </h5>
+                                    <p>
+                                        Now that we have learned how to receive valid <em>username</em> and
+                                        <em>password</em> data from the front end, we will store it in the database.
+                                    </p>
+                                    <pre><code>// Check if the username already exists
+db.get('SELECT * FROM users WHERE username = ?', [username], async (err, row) => {
+    ...
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    db.run('INSERT INTO users (username, password) VALUES (?, ?)',
+        [username, hashedPassword],
+    );
+});</code></pre>
+                                    <p>
+                                        Try entering valid data in the form on the right and click
+                                        "<strong>Register</strong>", and refresh the page to see what changes appear in
+                                        the data table below.
+                                    </p>
+
+                                    <!-- Data Table Section -->
+                                    <div class="card mt-4">
+                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                            <h5>User Data</h5>
+                                            <button class="btn btn-primary btn-sm" onclick="clearAllData()">Clear All
+                                                Data</button>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Username</th>
+                                                            <th>Encrypted Password</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="userDataTable">
+                                                        <!-- Data will be populated here -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right side registration form -->
+            <div class="col-lg-6">
+                <div class="card m-5">
+                    <!-- card header -->
+                    <div class="card-header text-center p-5">
+                        <h3>Create Account</h3>
+                    </div>
+
+                    <!-- card body -->
+                    <div class="card-body p-4">
+                        <form id="registrationForm" method="post" onsubmit="return validateForm(event)">
+                            <!-- username -->
+                            <!-- https://getbootstrap.com/docs/5.0/forms/floating-labels/ -->
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="username" name="username"
+                                    oninput="this.value = this.value.toLowerCase(); validateUsername(this)"
+                                    pattern="[a-z0-9]+" required placeholder="Username">
+                                <label for="username">Username</label>
+                                <div class="form-text">Only lowercase letters and numbers allowed</div>
+                                <div id="usernameError" class="error-message">Please enter a valid format</div>
+                            </div>
+
+                            <!-- password -->
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="password" name="password"
+                                    oninput="validatePassword()" required placeholder="Password">
+                                <label for="password">Password</label>
+                                <div class="password-requirements">
+                                    <div id="length" class="requirement invalid">
+                                        At least 8 characters
+                                    </div>
+                                    <div id="uppercase" class="requirement invalid">
+                                        Contains uppercase letter
+                                    </div>
+                                    <div id="lowercase" class="requirement invalid">
+                                        Contains lowercase letter
+                                    </div>
+                                    <div id="number" class="requirement invalid">
+                                        Contains number
+                                    </div>
+                                    <div id="special" class="requirement invalid">
+                                        Contains special character
+                                    </div>
+                                </div>
+                                <div id="passwordError" class="error-message"></div>
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+                                    oninput="validateConfirmPassword()" required placeholder="Confirm Password">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <div id="confirmPasswordError" class="error-message"></div>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    Register
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="validation.js"></script>
+    <script src="encryptDemo.js"></script>
+    <script src="userTable.js"></script>
+    <script>
+        function toggleFeature(element) {
+            const content = element.nextElementSibling;
+            element.classList.toggle('collapsed');
+            content.classList.toggle('collapsed');
+        }
+    </script>
+</body>
+
+</html>
