@@ -4,7 +4,7 @@ This project is created for the High Distinction task **10.4HD** of the Deakin U
 
 ---
 
-## Brief Introduction and Overview
+## 📄 Brief Introduction and Overview
 
 In this web demo, I extended the validation functionality of the registration form. Now I can customize the username and password requirements as I wish. This is important because, for example, some real-world websites do not require both uppercase and lowercase letters in a password, while others do.
 
@@ -27,7 +27,7 @@ Finally, I customized the CSS and tailored Bootstrap to make the page look cool�
 
 ---
 
-## 👨‍🏫 Created for
+## 🎓 Created for
 
 Deakin University  
 **SIT774 – Web Technologies and Development**  
