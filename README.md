@@ -1,4 +1,4 @@
-# 🔐 SIT774 10.4HD: Awesome Website Features
+#  SIT774 10.4HD: Awesome Website Features
 
 This project is created for the High Distinction task **10.4HD** of the Deakin University unit **SIT774: Web Technologies and Development**.
 
