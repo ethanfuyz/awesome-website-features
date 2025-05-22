@@ -1,37 +1,16 @@
-#  SIT774 10.4HD: Awesome Website Features
+# SIT774 10.4HD: Awesome Website Features
 
 This project is created for the High Distinction task **10.4HD** of the Deakin University unit **SIT774: Web Technologies and Development**.
 
 ---
 
-## 🌐 Project Overview
+## Brief Introduction and Overview
 
-This is an interactive tutorial-style demo website that showcases:
-
-### 1. **Custom Form Validation**
-- Fully customized username and password requirements.
-- Real-time feedback using JavaScript validation logic.
-- Dynamic styling effects to highlight validation success/failure.
-
-### 2. **Password Encryption and Storage**
-- User-entered passwords are hashed using **bcrypt** (with adjustable cost factor).
-- Encrypted data is stored securely using **SQLite3** as a file-based local database.
-
-### 3. **Cool CSS & Visual Enhancements**
-- Tailored **Bootstrap** components.
-- Gradient backgrounds, hover animations, custom input borders.
-- Responsive layout with scrollable feature tutorial section.
-
----
-
-## 🎯 Purpose
-
-This site is designed not just as a functional demo, but as a **tutorial experience**. It explains key front-end and back-end techniques through integrated UI and live interaction, making the learning process intuitive and engaging.
-
-Users can:
-- Experiment with input validation.
-- See how bcrypt encryption works.
-- Understand how user data is safely stored.
+In this web demo, I extended the validation functionality of the registration form. Now I can customize the username and password requirements as I wish. This is important because, for example, some real-world websites do not require both uppercase and lowercase letters in a password, while others do.
+I also used JavaScript functions to make the validation visually dynamic within the form.
+Next, I used the bcrypt module to hash the entered password and stored it locally using sqlite3 as a file-based database.
+In the tutorial section on the left side of the page, I added interactive elements to help users better understand how the related technologies work.
+Finally, I customized the CSS and tailored Bootstrap to make the page look cool—for example, with a gradient background, animated hover effects on buttons, and modified form input borders.
 
 ---
 
@@ -45,34 +24,8 @@ Users can:
 
 ---
 
-## 📁 Structure
-
-```
-public_html/
-├── demo.html        # Main page with form and tutorial
-├── validation.js    # Custom validation and fetch logic
-├── styles.css       # Custom visual design
-
-index.js             # Server-side code (Express + bcrypt + SQLite)
-database.db          # Local SQLite database
-```
-
----
-
-## 🧪 To Run Locally
-
-1. Clone the repo  
-2. Install dependencies:  
-   `npm install express bcrypt sqlite3 body-parser`
-3. Run the server:  
-   `node index.js`
-4. Open in browser:  
-   `http://localhost:3000/demo.html`
-
----
-
 ## 👨‍🏫 Created for
 
 Deakin University  
 **SIT774 – Web Technologies and Development**  
-**Task 10.4HD: Complete Awesome Website**
+**Task 10.4HD: Complete Awesome Website features**
