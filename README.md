@@ -30,5 +30,5 @@ Finally, I customized the CSS and tailored Bootstrap to make the page look cool�
 ## 🎓 Created for
 
 Deakin University  
-**SIT774 – Web Technologies and Development**  
-**Task 10.4HD: Complete Awesome Website features**
+SIT774 – Web Technologies and Development 
+Task 10.4HD: Complete Awesome Website features
