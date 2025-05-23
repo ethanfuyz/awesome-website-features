@@ -45,15 +45,21 @@ lengthReq.textContent = hasLength ? '✓ At least 8 characters' : 'At least 8 ch
                                         <li>Sets the style class (valid/invalid) based on password length</li>
                                         <li>Updates the display text, adds a ✓ mark if validation passes</li>
                                     </ul>
-                                    <p>
-                                        Please try entering something in the <strong>Password</strong> input box on the
-                                        right
-                                        and see what happens!
-                                    </p>
-                                    <pre><code>const isValid = hasLength && hasUppercase && hasLowercase && hasNumber && hasSpecial;</code></pre>
-                                    <p>When all the above conditions are met, the function
-                                        <strong><em>validatePassword()</em></strong> will return <em>true</em>.
-                                    </p>
+                                    <p><a href="https://www.w3schools.com/jsref/jsref_obj_regexp.asp"
+                                            target="_blank">Regular expressions</a> are powerful tools for working with
+                                        strings, especially commonly used in scenarios like input validation, data
+                                        extraction, and format checking.</p>
+                                    <pre><code>/pattern/flags</code></pre>
+                                        <p>
+                                            Please try entering something in the <strong>Password</strong> input box on
+                                            the
+                                            right
+                                            and see what happens!
+                                        </p>
+                                        <pre><code>const isValid = hasLength && hasUppercase && hasLowercase && hasNumber && hasSpecial;</code></pre>
+                                        <p>When all the above conditions are met, the function
+                                            <strong><em>validatePassword()</em></strong> will return <em>true</em>.
+                                        </p>
                                 </div>
 
                                 <div>
@@ -320,9 +326,9 @@ background: rgba(255, 255, 255, 0.9);</code></pre>
 
                                         <div class="col-md-6">
                                             <label for="transparencySlider" class="form-label">Transparency: <span
-                                                    id="transparencyValue">0.9</span></label>
+                                                    id="transparencyValue">0.7</span></label>
                                             <input type="range" class="form-range" id="transparencySlider" min="0"
-                                                max="1" step="0.1" value="0.9">
+                                                max="1" step="0.1" value="0.7">
                                         </div>
                                     </div>
                                 </div>
@@ -343,7 +349,7 @@ background: rgba(255, 255, 255, 0.9);</code></pre>
                                         </div>
                                     </div>
                                     <div class="card position-absolute top-50 start-50 translate-middle" id="demoCard"
-                                        style="backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.9); width: 100%; height: 150px; z-index: 1;">
+                                        style="backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.7); width: 100%; height: 150px; z-index: 1;">
                                         <div class="card-body d-flex flex-column justify-content-center">
                                             <h5 class="card-title text-center">Demo Card</h5>
                                         </div>
@@ -377,8 +383,11 @@ background: rgba(255, 255, 255, 0.9);</code></pre>
                                 </h5>
                                 <pre><code>background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);</code></pre>
                                 <p>
-                                    Set a gradient background for the element, starting from the top left corner at 135
-                                    degrees, transitioning from <span style="display: inline-block; background-color: #667eea; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.9em;">#667eea</span> to <span style="display: inline-block; background-color: #764ba2; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.9em;">#764ba2</span>.
+                                    Set a gradient background for the element, starting from the top left corner at <strong>135
+                                    degrees</strong>, transitioning from <span
+                                        style="display: inline-block; background-color: #667eea; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.9em;">#667eea</span>
+                                    to <span
+                                        style="display: inline-block; background-color: #764ba2; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.9em;">#764ba2</span>.
                                 </p>
                             </div>
                         </div>

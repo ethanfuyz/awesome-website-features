@@ -91,10 +91,6 @@ body {
     display: none;
 }
 
-.is-invalid {
-    border-color: #dc3545 !important;
-}
-
 .password-requirements {
     font-size: 0.875rem;
     margin-top: 0.5rem;
